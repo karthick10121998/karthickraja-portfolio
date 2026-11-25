@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cobalt: #1f45ff;
+  --lime: #d6ff3d;
+  --snow: #f7f8fc;
+  --ink: #0b1020;
+}
+
+html { scroll-behavior: smooth; overflow-x: clip; }
+body {
+  @apply bg-cobalt font-sans text-snow antialiased;
+  overflow-x: clip;
+}
+::selection { background: var(--lime); color: var(--ink); }
+
+/* hide the native cursor only on devices with a fine pointer */
+@media (pointer: fine) {
+  body.has-cursor, body.has-cursor a, body.has-cursor button { cursor: none; }
+}
+
+/* ---------- poster grain ---------- */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+}
+
+.halftone {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.4px);
+  background-size: 14px 14px;
+}
+.halftone-ink {
+  background-image: radial-gradient(rgba(11, 16, 32, 0.12) 1.2px, transparent 1.4px);
+  background-size: 14px 14px;
+}
+
+/* ---------- type ---------- */
+.display {
+  font-family: 'Anton', Impact, sans-serif;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.005em;
+}
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 2px currentColor;
+}
+.outline-lime { color: transparent; -webkit-text-stroke: 3px var(--lime); }
+.outline-snow { color: transparent; -webkit-text-stroke: 2px var(--snow); }
+.outline-ink { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+
+/* ---------- glitch ---------- */
+.glitch { position: relative; display: inline-block; }
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+.glitch::before { color: var(--lime); }
+.glitch::after { color: #ff3df0; }
+.glitch.is-glitching::before,
+.glitch:hover::before {
+  opacity: 0.9;
+  animation: glitch-a 0.42s steps(2) infinite;
+}
+.glitch.is-glitching::after,
+.glitch:hover::after {
+  opacity: 0.8;
+  animation: glitch-b 0.38s steps(2) infinite;
+}
+@keyframes glitch-a {
+  0% { clip-path: inset(10% 0 70% 0); transform: translate(-4px, -2px); }
+  25% { clip-path: inset(60% 0 12% 0); transform: translate(4px, 1px); }
+  50% { clip-path: inset(30% 0 45% 0); transform: translate(-3px, 2px); }
+  75% { clip-path: inset(80% 0 4% 0); transform: translate(3px, -1px); }
+  100% { clip-path: inset(0 0 85% 0); transform: translate(-2px, 0); }
+}
+@keyframes glitch-b {
+  0% { clip-path: inset(75% 0 5% 0); transform: translate(4px, 2px); }
+  25% { clip-path: inset(5% 0 75% 0); transform: translate(-4px, -1px); }
+  50% { clip-path: inset(45% 0 30% 0); transform: translate(3px, -2px); }
+  75% { clip-path: inset(15% 0 60% 0); transform: translate(-3px, 1px); }
+  100% { clip-path: inset(88% 0 0 0); transform: translate(2px, 0); }
+}
+
+/* ---------- starburst ---------- */
+.star-shape {
+  clip-path: polygon(50% 0%, 57% 13%, 70% 4%, 72% 19%, 87% 15%, 83% 30%, 98% 32%, 89% 45%, 100% 55%, 87% 63%, 94% 77%, 79% 78%, 79% 93%, 65% 87%, 57% 100%, 48% 88%, 36% 98%, 32% 84%, 17% 89%, 19% 74%, 4% 72%, 12% 59%, 0% 49%, 12% 40%, 5% 26%, 20% 25%, 20% 10%, 34% 15%, 41% 2%);
+}
+
+/* ---------- misc ---------- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+.btn-pop {
+  box-shadow: 5px 5px 0 0 var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-pop:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 0 var(--ink); }
+.btn-pop:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 0 var(--ink); }
+
+.card-pop { box-shadow: 8px 8px 0 0 var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  html { scroll-behavior: auto; }
+}
