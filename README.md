@@ -18,7 +18,11 @@ npm run dev
 
 - **All text, projects, jobs, skills, testimonials and links:** `src/data.js`
 - **Photo:** `public/img/karthick.webp` (keep the same file name, transparent background works best)
-- **Résumé download:** `public/Karthickraja_Velmurugan_Resume.pdf`
+- **PDFs served by the site** (replace a file with the same name to update it):
+  - `public/resume.pdf` → https://karthickraja-portfolio-jet.vercel.app/resume.pdf (ATS résumé)
+  - `public/designer-resume.pdf` → /designer-resume.pdf (visual résumé)
+  - `public/portfolio.pdf` → /portfolio.pdf (PDF portfolio)
+  - `vercel.json` gives each one a proper file name when someone saves it
 - **Project screens:** `public/img/work/` · **Concept gallery:** `public/img/concepts/`
 - **Colours:** `tailwind.config.js` (cobalt `#1F45FF`, lime `#D6FF3D`, snow `#F7F8FC`, ink `#0B1020`)
 

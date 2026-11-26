@@ -1,0 +1,7 @@
+{
+  "headers": [
+    { "source": "/resume.pdf", "headers": [{ "key": "Content-Disposition", "value": "inline; filename=\"Karthickraja_Velmurugan_Resume.pdf\"" }] },
+    { "source": "/designer-resume.pdf", "headers": [{ "key": "Content-Disposition", "value": "inline; filename=\"Karthickraja_Velmurugan_Designer_Resume.pdf\"" }] },
+    { "source": "/portfolio.pdf", "headers": [{ "key": "Content-Disposition", "value": "inline; filename=\"Karthickraja_Velmurugan_Portfolio.pdf\"" }] }
+  ]
+}
