@@ -153,7 +153,7 @@ export function Nav() {
           </ul>
           <div className="flex items-center gap-2">
             <a
-              href="Karthickraja_Velmurugan_Resume.pdf"
+              href="resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="hidden rounded-full border-2 border-ink px-4 py-2 text-sm font-bold transition hover:bg-ink hover:text-lime sm:block"
@@ -196,7 +196,9 @@ export function Nav() {
             </ul>
             <div className="space-y-2 text-sm text-snow/70">
               <a className="block text-lime" href={`mailto:${data.person.email}`}>{data.person.email}</a>
-              <a className="block" href="Karthickraja_Velmurugan_Resume.pdf" target="_blank" rel="noreferrer">Download résumé ↓</a>
+              <a className="block" href="resume.pdf" target="_blank" rel="noreferrer">Résumé (PDF) ↓</a>
+              <a className="block" href="portfolio.pdf" target="_blank" rel="noreferrer">Portfolio (PDF) ↓</a>
+              <a className="block" href="designer-resume.pdf" target="_blank" rel="noreferrer">Designer résumé (PDF) ↓</a>
             </div>
           </motion.div>
         )}

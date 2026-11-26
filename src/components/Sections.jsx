@@ -487,6 +487,24 @@ export function Contact() {
                 </a>
               ))}
             </div>
+            <div className="mt-10">
+              <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-lime">Downloads</div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {[
+                  ['Résumé', 'ATS-friendly · 2 pages', 'resume.pdf'],
+                  ['Designer résumé', 'Visual · 1 page', 'designer-resume.pdf'],
+                  ['Portfolio', 'Full case studies · PDF', 'portfolio.pdf'],
+                ].map(([t, d, h]) => (
+                  <a key={h} href={h} target="_blank" rel="noreferrer" data-cursor="Open" className="group rounded-2xl border-[3px] border-ink bg-snow p-4 text-ink transition hover:-translate-y-1 hover:bg-lime">
+                    <div className="flex items-center justify-between">
+                      <b>{t}</b>
+                      <span className="transition-transform group-hover:translate-y-0.5">↓</span>
+                    </div>
+                    <div className="mt-1 text-xs text-ink/60">{d}</div>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <form onSubmit={send} className="card-pop space-y-4 rounded-[28px] border-[3px] border-ink bg-snow p-6 text-ink md:p-8">
@@ -543,7 +561,8 @@ export function Footer() {
             <a href="#about" className="hover:text-lime">About</a>
             <a href="#process" className="hover:text-lime">Process</a>
             <a href="#experience" className="hover:text-lime">Experience</a>
-            <a href="Karthickraja_Velmurugan_Resume.pdf" target="_blank" rel="noreferrer" className="hover:text-lime">Résumé</a>
+            <a href="resume.pdf" target="_blank" rel="noreferrer" className="hover:text-lime">Résumé</a>
+            <a href="portfolio.pdf" target="_blank" rel="noreferrer" className="hover:text-lime">Portfolio PDF</a>
           </div>
         </div>
         <div className="display mt-16 select-none text-center text-[17vw] leading-[0.8] text-snow/[0.07]">KARTHICKRAJA</div>

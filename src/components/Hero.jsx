@@ -120,11 +120,14 @@ export default function Hero({ ready }) {
                 </a>
               </Magnetic>
               <Magnetic>
-                <a href="Karthickraja_Velmurugan_Resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border-[3px] border-snow px-7 py-4 text-base font-bold text-snow transition hover:bg-snow hover:text-cobalt">
+                <a href="resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border-[3px] border-snow px-7 py-4 text-base font-bold text-snow transition hover:bg-snow hover:text-cobalt">
                   Résumé ↓
                 </a>
               </Magnetic>
             </div>
+            <a href="portfolio.pdf" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-snow/80 underline decoration-lime decoration-2 underline-offset-4 hover:text-lime">
+              Prefer a PDF? Download the portfolio ↓
+            </a>
           </motion.div>
 
           <motion.div {...show(0.6)} className="relative hidden self-end md:block">
