@@ -12,7 +12,8 @@ export const data = {
     "linkedin_short": "linkedin.com/in/karthickraja-velmurugan-10dec1998",
     "behance": "https://www.behance.net/cartheeraja",
     "behance_short": "behance.net/cartheeraja",
-    "portfolio_short": "karthickrajavelmurugan.vercel.app"
+    "portfolio_short": "karthickraja-portfolio-jet.vercel.app",
+    "website": "https://karthickraja-portfolio-jet.vercel.app/"
   },
   "stats": [
     {
@@ -775,7 +776,7 @@ export const data = {
       "meta": [
         {
           "k": "Role",
-          "v": "UI/UX designer (solo)"
+          "v": "UI/UX designer"
         },
         {
           "k": "Type",
